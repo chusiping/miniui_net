@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <!--依照原版的navtree.html进行了浓缩,把js和css指向换成绝对路径，把js代码包含在了js文件中-->
+    <head>
+        <title>
+            系统界面 NavTree
+        </title>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+        <link href="/demo/demo.css" rel="stylesheet" type="text/css"/>
+        <script src="/scripts/boot.js" type="text/javascript">
+        </script>
+        <link href="/css/onlyindex.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!--Layout-->
+        <div class="mini-layout" id="layout1" style="width:100%;height:100%;">
+            <div class="header" height="70" region="north" showheader="false" showsplit="false">
+                <h1 style="margin:0;padding:15px;cursor:default;font-family:'Trebuchet MS',Arial,sans-serif;">
+                    导航树（左侧）
+                </h1>
+                <div style="position:absolute;top:18px;right:10px;">
+                    <a class="mini-button mini-button-iconTop" iconcls="icon-add" onclick="onQuickClick" plain="true">
+                        快捷
+                    </a>
+                    <a class="mini-button mini-button-iconTop" iconcls="icon-edit" onclick="onClick" plain="true">
+                        首页
+                    </a>
+                    <a class="mini-button mini-button-iconTop" iconcls="icon-date" onclick="onClick" plain="true">
+                        消息
+                    </a>
+                    <a class="mini-button mini-button-iconTop" iconcls="icon-edit" onclick="onClick" plain="true">
+                        设置
+                    </a>
+                    <a class="mini-button mini-button-iconTop" iconcls="icon-close" onclick="onClick" plain="true">
+                        关闭
+                    </a>
+                </div>
+            </div>
+            <div height="30" region="south" showheader="false" showsplit="false" title="south">
+                <div style="line-height:28px;text-align:center;cursor:default">
+                    Copyright © 上海普加软件有限公司版权所有
+                </div>
+            </div>
+            <div bodystyle="overflow:hidden;" region="center" style="border:0;" title="center">
+                <!--Splitter-->
+                <div borderstyle="border:0;" class="mini-splitter" style="width:100%;height:100%;">
+                    <div maxsize="250" minsize="100" showcollapsebutton="true" size="180" style="border-width:1px;">
+                        <!--切换class名称就可以换格式-->
+                        <!--mini-tree-->
+                        <ul class="mini-tree" id="leftTree" idfield="id" onnodeselect="onNodeSelect" resultastree="false" showtreeicon="true" style="width:100%;height:100%;" textfield="text" url="/demo/data/listTree.txt">
+                        </ul>
+                        <!--mini-outlooktree-->
+                        <!-- <div id="leftTree" class="mini-outlooktree" url="/demo/data/outlooktree.txt" onnodeclick="onNodeSelect" textField="text" idField="id" parentField="pid">
+                        </div> -->
+                        <!-- ########### over ############## -->
+                    </div>
+                    <div showcollapsebutton="false" style="border:0px;">
+                        <!--Tabs-->
+                        <div activeindex="0" class="mini-tabs" id="mainTabs" onactivechanged="onTabsActiveChanged" plain="false" style="width:100%;height:100%;">
+                            <div title="首页" url="/docs/api/overview.html">
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--把原来的js代码包含在了navtree_new.js文件中-->
+        <script src="/scripts/navtree_new.js" type="text/javascript">
+        </script>
+    </body>
+</html>
